@@ -1,4 +1,4 @@
-This repository contains a R/Shiny app to obtain sample sizes for optimal design for univariate regression-based norming, as described in Innocenti et al. (2023, Psy Met)
+This repository contains a R/Shiny app to obtain sample sizes for optimal design for univariate regression-based norming, as described in Innocenti et al. (2023, Psychological Methods, 28(1), 89–106. https://doi.org/10.1037/met0000394)
 
 To run the code you would need
 1. An installation of R (https://cran.r-project.org/bin/windows/base/)
