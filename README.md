@@ -1,4 +1,4 @@
-# RE_subODesgins
+# ShinyApp_RE_subODesigns
 This repository contains a R/Shiny app to compute the relative efficiency and the required sample size increase for a sub-optimal design versus the optimal design given a model for test norming
 
 To run the code you would need:
