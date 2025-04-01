@@ -7,3 +7,5 @@ To run the code you would need:
 3. then run this code:
 
 shiny::runGitHub('FInnocenti-Stat/ShinyApp_SampSize_MahalaDist')
+
+Alternatively, you can access the Shiny app directly—without installing R or downloading the source files—using the following link: https://francescoinnocenti.shinyapps.io/ShinyApp_SampSize_MahalaDist/ 
