@@ -6,3 +6,5 @@ To run the code you would need:
 3. Then run this code:
 
    shiny::runGitHub('FInnocenti-Stat/ShinyApp_OD_Univariate_Norming')
+
+Alternatively, you can access the Shiny app directly—without installing R or downloading the source files—using the following link: https://francescoinnocenti.shinyapps.io/shinyapp_od_univariate_norming/ 
