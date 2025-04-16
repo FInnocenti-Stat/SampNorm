@@ -3,7 +3,6 @@
 ###############################################################################################################################
 
 #################### Z-score: Sample size calculation formulas for different goals under any design ###########################
-## see file: https://docs.google.com/document/d/1yhiugzMfnuYoZm1WKKkaq13gQaUoXYli/edit 
 
 # (1) - Sample size for hypothesis testing
 N_star_HypTest_Z<-function(alpha,gamma,Zc,delta, design=c("Optimal"),k,model=~Age, min_age=20, max_age=80, g_age, Age_levels=c("Uniform"), granularity=100, q_sex, min_edu, max_edu, Edu_levels,g_edu, q_edu){ 
@@ -325,7 +324,6 @@ return(AP)
 
 
 ################# PR-score: Sample size calculation formulas for different goals under any design ############################
-## see file: https://docs.google.com/document/d/1ojcd9sisSkcChaDer3epHje-GRawdQszKAf7Kl3KWxY/edit 
 
 # (1) - Sample size for hypothesis testing
 N_star_HypTest_PR<-function(alpha,gamma,PRc,delta, design=c("Optimal"),k,model=~Age, min_age=20, max_age=80, g_age, Age_levels=c("Uniform"), granularity=100, q_sex, min_edu, max_edu, Edu_levels,g_edu, q_edu){ 
@@ -663,7 +661,6 @@ return(AP)
 ################################################################################################################################
 
 ###################### MD-score: Sample size calculation formulas for different goals under any design
-## see file: https://docs.google.com/document/d/1uTTFm2DBCrkdhMlHtlxGNAPjCDfsCB0q6PP9Bgor6JQ/edit  
 
 # (1) -	Sample size for hypothesis testing
 N_star_HypTest_Mahala<-function(alpha,gamma,MD_c,tau,design=c("Optimal"),k,model=~Age, min_age=20, max_age=80, g_age, Age_levels=c("Uniform"), granularity=100, q_sex, min_edu, max_edu, Edu_levels,g_edu,  q_edu){
