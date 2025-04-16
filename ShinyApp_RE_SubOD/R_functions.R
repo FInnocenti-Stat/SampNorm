@@ -3,9 +3,6 @@
 # or continuous, and the distribution of age and education can be with equidistant levels, uniform, 
 # and the age and education levels can be selected freely by the user.
 
-# To be done: Allow free specification of combinations of levels and their design weight
-
-#Cambiato granularity in age_granularity ed aggiunto edu_granularity. Dopodiche' ho aggiornato le righe 19 e 34.
 RelEff<-function(model=~Age, min_age=20, max_age=80, g_age, Age_levels=c("Uniform"), age_granularity=100, q_sex, min_edu, max_edu, Edu_levels, g_edu,edu_granularity, q_edu, Z, PR, Mahala){
 
 args<-match.call()  
@@ -177,90 +174,3 @@ REplot<-function(model=~Age, min_age=20, max_age=80, agegroup, q_sex, q_edu, Z, 
   
 }
 
-##################################################################################################
-## -------------------------------------------------------------------------------------------- ##
-## This below can be deleted in final released version, as not needed. For internal checks only ##
-## -------------------------------------------------------------------------------------------- ##
-##################################################################################################
-
-#out<-REplot(model=~Age+Sex+factor(Education), min_age=10, max_age=40, agegroup=5, q_sex=2, q_edu=4, Z=1.96, PR, Mahala,radius=2)#,quadraticAge=F)
-#out<-REplot(model=~Age+factor(Education), min_age=20, max_age=80, agegroup=10, q_edu=5, Z=1.96, radius=5)
-
-##################################################################################################
-## -------------------------------------------------------------------------------------------- ##
-## This below can be deleted in final released version, as not needed. For internal checks only ##
-## -------------------------------------------------------------------------------------------- ##
-##################################################################################################
-
-# RelEff(model=~Age+Education, min_age=20, max_age=80, Edu_levels = c(5,10,15), Age_levels="Uniform", Z=-2)
-# RelEff(model=~Age+Sex, min_age=20, max_age=80, q_sex = 2, Age_levels="Uniform", Z=-2)
-# RelEff(model=~Age+Education, Edu_levels = c(5,10,15), Age_levels=c(20,30,40,50,80), Mahala = 2.15)
-# 
-# 
-# # Checks
-# 
-# RelEff(model=~Age,  Age_levels=c(20,80), Z=0) # Optimal design for linear model in age
-# RelEff(model=~Age+Sex, q_sex=2, Age_levels=c(20,80), Z=0) # Optimal design for linear model in age
-# RelEff(model=~Age+I(Age^2)+Sex, q_sex=2, Age_levels=c(20,50,80), Z=0) # Optimal design for quadratic model in age
-# RelEff(model=~Age*Sex, q_sex=2, Age_levels=c(20,80), Z=0) # Optimal design for linear model in age with interaction
-# RelEff(model=~(Age+I(Age^2))*Sex, q_sex=2, Age_levels=c(20,50,80), Z=0) # Optimal design for linear model in age with interaction
-# 
-# 
-# RelEff(model=~Age,  Age_levels=c(20,80), PR=10) # Optimal design for linear model in age
-# RelEff(model=~Age+Sex, q_sex=2, Age_levels=c(20,80), PR=10) # Optimal design for linear model in age
-# RelEff(model=~Age+I(Age^2)+Sex, q_sex=2, Age_levels=c(20,50,80), PR=10) # Optimal design for quadratic model in age
-# RelEff(model=~Age*Sex, q_sex=2, Age_levels=c(20,80), PR=10) # Optimal design for linear model in age with interaction
-# RelEff(model=~(Age+I(Age^2))*Sex, q_sex=2, Age_levels=c(20,50,80), PR=10) # Optimal design for linear model in age with interaction
-# 
-# 
-# RelEff(model=~Age,  Age_levels=c(20,80), Mahala = 2.15) # Optimal design for linear model in age
-# RelEff(model=~Age+Sex, q_sex=2, Age_levels=c(20,80), Mahala = 2.15) # Optimal design for linear model in age
-# RelEff(model=~Age+I(Age^2)+Sex, q_sex=2, Age_levels=c(20,50,80), Mahala = 2.15) # Optimal design for quadratic model in age
-# RelEff(model=~Age*Sex, q_sex=2, Age_levels=c(20,80), Mahala = 2.15) # Optimal design for linear model in age with interaction
-# RelEff(model=~(Age+I(Age^2))*Sex, q_sex=2, Age_levels=c(20,50,80), Mahala = 2.15) # Optimal design for linear model in age with interaction
-# 
-# ## Checks made by Alberto for consistency with shiny app
-# 
-# ##Case 10
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, age_granularity=4, Age_levels="Uniform", min_edu=6, max_edu=25,edu_granularity=2, Edu_levels="Uniform", q_sex=2,  Z=2.5)
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, age_granularity=4, Age_levels="Uniform", min_edu=6, max_edu=25,edu_granularity=4, Edu_levels="Uniform", q_sex=2,  PR=2.5)
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, age_granularity=5, Age_levels="Uniform", min_edu=6, max_edu=25,edu_granularity=5, Edu_levels="Uniform", q_sex=2,  Mahala=1.6)
-# 
-# ##Case 11
-# RelEff(model=~Age+Sex+Education, min_age=10, max_age=40, g_age=2, Age_levels="Equidistant", q_sex=2, q_edu=4, Z=1.96)
-# RelEff(model=~Age+Sex+Education, min_age=10, max_age=40, g_age=2, Age_levels="Equidistant", q_sex=2, q_edu=4, PR=10)
-# RelEff(model=~Age*Sex*Education, min_age=10, max_age=40, g_age=2, Age_levels="Equidistant", q_sex=2, q_edu=4, Mahala=2.15)
-# 
-# ##Case 12
-# RelEff(model=~Age+Sex+Education^2+Education, min_age=10, max_age=40, g_age=2, Age_levels="Equidistant", min_edu=6, max_edu=25,g_edu=4, Edu_levels="Equidistant", q_sex=2,  Z=2)
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, g_age=4, Age_levels="Equidistant", min_edu=6, max_edu=25,g_edu=4, Edu_levels="Equidistant", q_sex=2,  PR=5)
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, g_age=4, Age_levels="Equidistant", min_edu=6, max_edu=25,g_edu=4, Edu_levels="Equidistant", q_sex=2,  Mahala=3)
-# 
-# ##Case 13
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, g_age=4, Age_levels="Equidistant", min_edu=6, max_edu=25,edu_granularity=2, Edu_levels="Uniform", q_sex=2,  Z=2.5)
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, g_age=4, Age_levels="Equidistant", min_edu=6, max_edu=25,edu_granularity=2, Edu_levels="Uniform", q_sex=2,  PR=2.5)
-# RelEff(model=~Age+Age^2+Sex+Education, min_age=6, max_age=35, g_age=4, Age_levels="Equidistant", min_edu=6, max_edu=25,edu_granularity=2, Edu_levels="Uniform", q_sex=2,  Mahala=1.6)
-
-##################################################################################################
-## -------------------------------------------------------------------------------------------- ##
-## This below can be deleted in final released version, as not needed. For internal checks only ##
-## -------------------------------------------------------------------------------------------- ##
-##################################################################################################
-
-## Cose da fare ##
-##### PUT FACTOR IN SHINY APP FOR SEX AND EDUCATION WHEN THEY ARE CATEGORICAL.+ Age^2*factor(Sex)*Education^2?. Fatto.
-##### Either put always 2 and 3 (3 is optimal for quadratic effects) or always put 2, but give the label "optimal". Fatto.
-##### In corrispondenza di ciascun puntino mettere la sample size increase. Fatto.
-##### Legenda per i puntini. Fatto.
-##### Plot per ogni scenario con age equidistant ed education categorical.
-##### Sotto relative efficiency spiegare le percentuali. Fatto.
-##### Controllare I(Age^2).
-##### Standardizzare le variabili - legato al punto sopra.
-##### Radius 2-10.
-##### Riconoscere automaticamente se c'è l'effetto quadratico (oppure mettere un warning). Per la funzione. Fatto.
-
-REplot(model=~Age+factor(Education), min_age=20, max_age=80, agegroup=10, q_edu=5, Z=1.96, radius=5)
-
-# RelEff(model=~Age+I(Age^2) + factor(Sex) + Education + Age*Education + Age*factor(Sex) + factor(Sex)*Education + Age*factor(Sex)*Education + I(Age^2)*Education + I(Age^2)*factor(Sex) + I(Age^2)*factor(Sex)*Education + I(Education^2) + Age*I(Education^2) + factor(Sex)*I(Education^2) + Age*factor(Sex)*I(Education^2) + I(Age^2)*factor(Sex)*I(Education^2),
-#        , min_age=5, max_age=20, Age_levels=c("Uniform"), age_granularity=10, q_sex=2, min_edu=5, max_edu=20, Edu_levels="Uniform", edu_granularity=10, Z=1.96
-#        )Error in solve.default(t(X_sub) %*% X_sub) : system is computationally singular: reciprocal condition number = 1.43552e-19
