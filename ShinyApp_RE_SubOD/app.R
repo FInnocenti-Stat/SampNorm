@@ -302,9 +302,6 @@ server <- function(input, output) {
     }
     output$RE=renderText(paste("Relative Efficiency = ",model))
     #### ----------------------------------------------------------------------- ####
-    ##   Probably not the best way of doing this. Create another if structure to   ##
-    ##   pass the model and all the parameters to the main function                ##
-    #### ----------------------------------------------------------------------- ####
     
     if(input$agelev=="Equidistant"){
       ##############################
