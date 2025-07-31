@@ -158,7 +158,7 @@ REplot<-function(model=~Age, min_age=20, max_age=80, agegroup, q_sex, q_edu, Z, 
   if(xvec[1]==xvec[2]){xvec=xvec[-1];revec=revec[-1];labelvec=labelvec[-1]}
   
   out=plot(xvec,revec,main="Sample size percentage increase",sub="Required sample size increase (percentage)",xlab="Age levels",ylab="Relative Efficiency",ylim=c(0,1.1),type="b",lwd=1.5,xaxt="n")
-  axis(1,at=xvec,labels=c("Optimal",xvec[2:(length(xvec)-1)],"Worst"))
+  axis(1,at=xvec,labels=c("Optimal",xvec[2:(length(xvec)-1)],"Uniform"))
   points(x=xvec[1],1,col="red",lwd=1.5,pch=19)
   points(x=max(xvec),revec[length(revec)],col="darkgrey",lwd=1.5,pch=19)
   points(x=agegroup,revec[which(xvec==agegroup)],col="blue",lwd=1.5,pch=19)
@@ -166,9 +166,9 @@ REplot<-function(model=~Age, min_age=20, max_age=80, agegroup, q_sex, q_edu, Z, 
   #text(xvec[-1] + 0.05, revec[-1] + 0.05, labelvec[-1])  # Skip the first element for standard text placement
   #text(xvec[1], revec[1] - 0.05, labelvec[1], col = "red")  # Position the first label separately
   if(revec[length(revec)]>0.5){
-    legend("bottomright",legend=c("Optimal Design","Proposed Design","Worst Design"),col=c("red","blue","darkgrey"),pch=c(19,19,19),box.lty=0)
+    legend("bottomright",legend=c("Optimal Design","Proposed Design","Uniform Design"),col=c("red","blue","darkgrey"),pch=c(19,19,19),box.lty=0)
   }else{
-    legend("topright",legend=c("Optimal Design","Proposed Design","Worst Design"),col=c("red","blue","darkgrey"),pch=c(19,19,19),box.lty=0)
+    legend("topright",legend=c("Optimal Design","Proposed Design","Uniform Design"),col=c("red","blue","darkgrey"),pch=c(19,19,19),box.lty=0)
   }
   return(out)
   
