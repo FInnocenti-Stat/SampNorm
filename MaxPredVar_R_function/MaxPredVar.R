@@ -36,5 +36,18 @@ MaxPredVar<-function(model=~Age, min_age=20, max_age=80, g_age, Age_levels=c("Un
 }
 
 
-## Example:
+######################## Examples:
+## Same model as in Appendix A.1 (model for TMT-A in Magnusdottir et al. (2019)), age range =[18, 64], Sex=(0,1), Education=(0,1,2)
+
+# Optimal design
+MaxPredVar(model=~Age+I(Age^2)+factor(Education)+Sex, min_age=18, max_age=64,Age_levels=c(18, 41, 64), q_sex=2, q_edu=3)
+
+# 5 Equidistant age levels: 18, 29.5, 41, 52.5, 64 years
+MaxPredVar(model=~Age+I(Age^2)+factor(Education)+Sex, min_age=18, max_age=64,Age_levels=c("Equidistant"), g_age=5, q_sex=2, q_edu=3)
+
+# Uniform age distribution
 MaxPredVar(model=~Age+I(Age^2)+factor(Education)+Sex, min_age=18, max_age=64,Age_levels=c("Uniform"), q_sex=2, q_edu=3)
+
+# Non-equidistant age levels: 18, 22, 41, 60, 64 years
+MaxPredVar(model=~Age+I(Age^2)+factor(Education)+Sex, min_age=18, max_age=64,Age_levels=c(18, 22, 41, 60, 64), q_sex=2, q_edu=3)
+
