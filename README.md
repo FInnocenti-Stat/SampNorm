@@ -10,4 +10,4 @@ Table of Content:
 
 If you use any of these R Shiny applications in your work, please use the following recommended citation:
 
-Innocenti, F., & Cassese, A. (19 Nov 2025): Sample Size Determination for Optimal and Sub-Optimal Designs in Simplified Parametric Test Norming, Multivariate Behavioral Research, DOI: 10.1080/00273171.2025.2580712
+Innocenti, F., & Cassese, A. (19 Nov 2025): Sample Size Determination for Optimal and Sub-Optimal Designs in Simplified Parametric Test Norming, Multivariate Behavioral Research, DOI: [10.1080/00273171.2025.2580712](https://doi.org/10.1080/00273171.2025.2580712)
