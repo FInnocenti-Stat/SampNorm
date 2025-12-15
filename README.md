@@ -8,7 +8,7 @@ Table of Content:
 
 - Shiny app to compute the relative efficiency and the required sample size increase for a sub-optimal design: https://github.com/FInnocenti-Stat/SampNorm/tree/main/ShinyApp_RE_SubOD 
 
-If you use any of these R Shiny applications in your work, please use the following recommended citation:
+If you use any of these R Shiny apps in your work, please use the following recommended citation:
 
 Innocenti, F., & Cassese, A. (19 Nov 2025). Sample Size Determination for Optimal and Sub-Optimal Designs in Simplified Parametric Test Norming. Multivariate Behavioral Research. https://doi.org/10.1080/00273171.2025.2580712
 
